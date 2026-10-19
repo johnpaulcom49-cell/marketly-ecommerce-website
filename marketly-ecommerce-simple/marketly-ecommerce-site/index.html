@@ -29,14 +29,14 @@
   </header>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-8">
-    <section class="simple-hero rounded-3xl overflow-hidden grid md:grid-cols-2 gap-6">
-      <div class="p-8 sm:p-10 lg:p-14 flex flex-col justify-center">
-        <p class="eyebrow">THE EVERYDAY MARKETPLACE</p>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-3 leading-[1.04] tracking-tight">Good things.<br><span class="text-lime-700">Good prices.</span></h1>
-        <p class="text-slate-600 mt-4 max-w-sm">Useful things, thoughtful finds, and little upgrades for everyday life.</p>
-        <a href="#shop" class="mt-6 inline-flex items-center gap-3 rounded-full bg-lime-700 text-white px-6 py-3.5 text-sm font-bold hover:bg-lime-800 transition">Shop the collection <span aria-hidden="true">↘</span></a>
+    <section class="simple-hero-full rounded-3xl overflow-hidden relative min-h-[500px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
+      <div class="relative z-10 w-full px-6 py-20 text-center">
+        <p class="eyebrow text-white/80">THE EVERYDAY MARKETPLACE</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold mt-3 leading-[1.04] tracking-tight text-white">Good things.<br><span class="text-lime-400">Good prices.</span></h1>
+        <p class="text-white/80 mt-4 max-w-2xl mx-auto text-lg">Useful things, thoughtful finds, and little upgrades for everyday life.</p>
+        <a href="#shop" class="mt-8 inline-flex items-center gap-3 rounded-full bg-lime-500 text-white px-8 py-4 text-base font-bold hover:bg-lime-600 transition">Shop the collection <span aria-hidden="true">↘</span></a>
       </div>
-      <div class="simple-hero-image rounded-2xl" role="img" aria-label="A curated collection of everyday products"></div>
     </section>
 
     <section id="shop" class="mt-10">
@@ -67,16 +67,82 @@
         </form>
       </div>
     </section>
+
+    <section class="my-12 sm:my-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="eyebrow">HELP</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Frequently asked questions</h2>
+        <p class="text-slate-500 mt-3 text-sm">Quick answers to the most common questions.</p>
+      </div>
+      <div class="mt-8 mx-auto max-w-3xl" data-accordion="collapse">
+        <div class="border-b border-slate-200">
+          <h3>
+            <button type="button" data-accordion-target="#faq-body-1" aria-expanded="false" aria-controls="faq-body-1" class="flex w-full items-center justify-between text-left gap-4 py-4 text-lg font-semibold text-slate-900 hover:text-lime-700">
+              <span>How long does shipping take?</span>
+              <span class="faq-icon shrink-0 text-slate-500 transition-transform duration-200" aria-hidden="true">
+                <svg class="icon-plus w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <svg class="icon-cross w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              </span>
+            </button>
+          </h3>
+          <div id="faq-body-1" class="hidden pb-4 border-b border-slate-200" aria-labelledby="faq-body-1">
+            <p class="text-slate-600 text-sm pt-3">Standard shipping takes 3-5 business days. Express options are available at checkout.</p>
+          </div>
+        </div>
+        <div class="border-b border-slate-200">
+          <h3>
+            <button type="button" data-accordion-target="#faq-body-2" aria-expanded="false" aria-controls="faq-body-2" class="flex w-full items-center justify-between text-left gap-4 py-4 text-lg font-semibold text-slate-900 hover:text-lime-700">
+              <span>What is your return policy?</span>
+              <span class="faq-icon shrink-0 text-slate-500 transition-transform duration-200" aria-hidden="true">
+                <svg class="icon-plus w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <svg class="icon-cross w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              </span>
+            </button>
+          </h3>
+          <div id="faq-body-2" class="hidden pb-4 border-b border-slate-200" aria-labelledby="faq-body-2">
+            <p class="text-slate-600 text-sm pt-3">You can return any item within 30 days for a full refund. Items must be unused and in original packaging.</p>
+          </div>
+        </div>
+        <div class="border-b border-slate-200">
+          <h3>
+            <button type="button" data-accordion-target="#faq-body-3" aria-expanded="false" aria-controls="faq-body-3" class="flex w-full items-center justify-between text-left gap-4 py-4 text-lg font-semibold text-slate-900 hover:text-lime-700">
+              <span>Do you ship internationally?</span>
+              <span class="faq-icon shrink-0 text-slate-500 transition-transform duration-200" aria-hidden="true">
+                <svg class="icon-plus w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <svg class="icon-cross w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              </span>
+            </button>
+          </h3>
+          <div id="faq-body-3" class="hidden pb-4 border-b border-slate-200" aria-labelledby="faq-body-3">
+            <p class="text-slate-600 text-sm pt-3">Yes, we ship to most countries. International shipping rates and times vary by destination.</p>
+          </div>
+        </div>
+        <div>
+          <h3>
+            <button type="button" data-accordion-target="#faq-body-4" aria-expanded="false" aria-controls="faq-body-4" class="flex w-full items-center justify-between text-left gap-4 py-4 text-lg font-semibold text-slate-900 hover:text-lime-700">
+              <span>How do I track my order?</span>
+              <span class="faq-icon shrink-0 text-slate-500 transition-transform duration-200" aria-hidden="true">
+                <svg class="icon-plus w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                <svg class="icon-cross w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              </span>
+            </button>
+          </h3>
+          <div id="faq-body-4" class="hidden" aria-labelledby="faq-body-4">
+            <p class="text-slate-600 text-sm pt-3">Once your order ships, you'll receive an email with tracking information. You can also track from your account page.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="border-t border-slate-100 mt-12">
+  <footer class="border-t border-slate-800 bg-black mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
-      <div><a href="index.html" class="brand-mark text-xl font-extrabold">marketly<span>.</span></a><p class="text-xs text-slate-500 mt-3 max-w-xs">Good finds, simply. Curated products for everyday life, delivered to your door.</p></div>
-      <div><p class="font-semibold text-slate-950 mb-3">Shop</p><ul class="space-y-2 text-slate-500"><li><a href="#" class="hover:text-lime-700">All products</a></li><li><a href="#" class="hover:text-lime-700">Electronics</a></li><li><a href="#" class="hover:text-lime-700">Fashion</a></li><li><a href="#" class="hover:text-lime-700">Home & living</a></li><li><a href="#" class="hover:text-lime-700">Beauty</a></li></ul></div>
-      <div><p class="font-semibold text-slate-950 mb-3">Help</p><ul class="space-y-2 text-slate-500"><li><a href="#" class="hover:text-lime-700">Shipping</a></li><li><a href="#" class="hover:text-lime-700">Returns</a></li><li><a href="#" class="hover:text-lime-700">Privacy</a></li><li><a href="#" class="hover:text-lime-700">Terms</a></li><li><a href="#" class="hover:text-lime-700">Contact</a></li></ul></div>
-      <div><p class="font-semibold text-slate-950 mb-3">Account</p><ul class="space-y-2 text-slate-500"><li><a href="login.html" id="footerSignin" class="hover:text-lime-700">Sign in</a></li><li><a href="register.html" class="hover:text-lime-700">Create account</a></li><li><a href="#" class="hover:text-lime-700">Track order</a></li></ul></div>
+      <div><a href="index.html" class="brand-mark text-xl font-extrabold text-white">marketly<span>.</span></a><p class="text-xs text-slate-400 mt-3 max-w-xs">Good finds, simply. Curated products for everyday life, delivered to your door.</p></div>
+      <div><p class="font-semibold text-white mb-3">Shop</p><ul class="space-y-2 text-slate-400"><li><a href="#" class="hover:text-lime-400">All products</a></li><li><a href="#" class="hover:text-lime-400">Electronics</a></li><li><a href="#" class="hover:text-lime-400">Fashion</a></li><li><a href="#" class="hover:text-lime-400">Home & living</a></li><li><a href="#" class="hover:text-lime-400">Beauty</a></li></ul></div>
+      <div><p class="font-semibold text-white mb-3">Help</p><ul class="space-y-2 text-slate-400"><li><a href="#" class="hover:text-lime-400">Shipping</a></li><li><a href="#" class="hover:text-lime-400">Returns</a></li><li><a href="#" class="hover:text-lime-400">Privacy</a></li><li><a href="#" class="hover:text-lime-400">Terms</a></li><li><a href="#" class="hover:text-lime-400">Contact</a></li></ul></div>
+      <div><p class="font-semibold text-white mb-3">Account</p><ul class="space-y-2 text-slate-400"><li><a href="login.html" id="footerSignin" class="hover:text-lime-400">Sign in</a></li><li><a href="register.html" class="hover:text-lime-400">Create account</a></li><li><a href="#" class="hover:text-lime-400">Track order</a></li></ul></div>
     </div>
-    <div class="border-t border-slate-100 mt-8 py-5 text-xs text-slate-500 text-center">© 2026 Marketly · Good finds, simply.</div>
+    <div class="border-t border-slate-800 mt-8 py-5 text-xs text-slate-400 text-center">© 2026 Marketly · Good finds, simply.</div>
   </footer>
 
   <div id="toast" class="toast" role="status"></div>
