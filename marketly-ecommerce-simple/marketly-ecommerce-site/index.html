@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketly — Good finds, simply.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-slate-900">
+  <header class="site-header sticky top-0 z-40 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="index.html" class="brand-mark text-xl font-extrabold">marketly<span>.</span></a>
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+        <a href="#shop" class="px-4 py-2 rounded-full text-slate-600 hover:bg-lime-50 hover:text-lime-700 transition">Shop</a>
+        <a href="#shop" class="px-4 py-2 rounded-full text-slate-600 hover:bg-lime-50 hover:text-lime-700 transition">New</a>
+        <a href="#shop" class="px-4 py-2 rounded-full text-slate-600 hover:bg-lime-50 hover:text-lime-700 transition">Best sellers</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="login.html" id="signinNav" class="hidden sm:inline-flex text-sm font-semibold text-slate-700 hover:text-lime-600">Sign in</a>
+        <button id="cartButton" class="relative rounded-full bg-slate-50 border border-slate-200 p-3 text-slate-700 hover:bg-lime-50 hover:text-lime-700 transition" aria-label="View cart">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+          <span id="cartCount" class="absolute -top-1 -right-1 bg-lime-400 text-slate-950 rounded-full w-5 h-5 text-xs font-bold flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-8">
+    <section class="simple-hero rounded-3xl overflow-hidden grid md:grid-cols-2 gap-6">
+      <div class="p-8 sm:p-10 lg:p-14 flex flex-col justify-center">
+        <p class="eyebrow">THE EVERYDAY MARKETPLACE</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-3 leading-[1.04] tracking-tight">Good things.<br><span class="text-lime-700">Good prices.</span></h1>
+        <p class="text-slate-600 mt-4 max-w-sm">Useful things, thoughtful finds, and little upgrades for everyday life.</p>
+        <a href="#shop" class="mt-6 inline-flex items-center gap-3 rounded-full bg-lime-700 text-white px-6 py-3.5 text-sm font-bold hover:bg-lime-800 transition">Shop the collection <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="simple-hero-image rounded-2xl" role="img" aria-label="A curated collection of everyday products"></div>
+    </section>
+
+    <section id="shop" class="mt-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-6">
+        <div><p class="eyebrow">A FEW GOOD FINDS</p><h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Made for your everyday.</h2><p class="text-slate-500 mt-2 text-sm">Find something you’ll love using.</p></div>
+        <div class="flex items-center gap-3"><label for="sortSelect" class="text-sm text-slate-500">Sort</label><select id="sortSelect" class="rounded-full border-slate-200 text-sm py-2.5 pl-4 pr-8 focus:ring-lime-600 focus:border-lime-600"><option value="featured">Featured</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name-asc">Name: A–Z</option><option value="name-desc">Name: Z–A</option></select></div>
+      </div>
+
+      <form id="searchForm" class="relative mb-5">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-width="2"/><path d="m16 16 4 4" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="searchInput" aria-label="Search products" class="w-full rounded-2xl bg-slate-100 border border-transparent focus:border-slate-300 focus:bg-white pl-11 pr-4 py-3.5 text-sm outline-none" placeholder="Search the good stuff...">
+      </form>
+
+      <nav class="flex gap-2 overflow-x-auto pb-1 mb-6 text-sm" aria-label="Product categories">
+        <button class="category-chip active" data-category="All">Everything</button><button class="category-chip" data-category="Electronics">Electronics</button><button class="category-chip" data-category="Fashion">Fashion</button><button class="category-chip" data-category="Home">Home</button><button class="category-chip" data-category="Beauty">Beauty</button><button class="category-chip" data-category="Sports">Sports</button>
+      </nav>
+
+      <div id="productGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5"></div>
+      <div id="emptyState" class="hidden text-center py-16"><div class="text-4xl mb-3">⌕</div><h3 class="font-bold text-xl">Nothing found just yet.</h3><p class="text-slate-500 mt-2">Try another search or category.</p><button id="resetFilters" class="mt-4 text-lime-700 font-semibold">Clear filters</button></div>
+    </section>
+
+    <section class="my-10 sm:my-16 rounded-3xl bg-white border border-slate-100 p-7 sm:p-10">
+      <div class="flex flex-col md:flex-row gap-5 items-start md:items-center justify-between">
+        <div><p class="eyebrow">THE GOOD LIST</p><h2 class="text-2xl sm:text-3xl font-extrabold mt-2">Good finds, straight to you.</h2><p class="text-slate-500 mt-2 text-sm">A short note when something worth seeing arrives.</p></div>
+        <form id="newsletterForm" class="flex w-full md:w-auto gap-2">
+          <input type="email" required placeholder="Email address" aria-label="Email address" class="flex-1 md:flex-none rounded-full px-4 py-3 text-sm text-slate-900 bg-slate-100 outline-none">
+          <button class="bg-lime-700 text-white rounded-full px-5 py-3 text-sm font-bold hover:bg-lime-800 whitespace-nowrap">Join us</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-100 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
+      <div><a href="index.html" class="brand-mark text-xl font-extrabold">marketly<span>.</span></a><p class="text-xs text-slate-500 mt-3 max-w-xs">Good finds, simply. Curated products for everyday life, delivered to your door.</p></div>
+      <div><p class="font-semibold text-slate-950 mb-3">Shop</p><ul class="space-y-2 text-slate-500"><li><a href="#" class="hover:text-lime-700">All products</a></li><li><a href="#" class="hover:text-lime-700">Electronics</a></li><li><a href="#" class="hover:text-lime-700">Fashion</a></li><li><a href="#" class="hover:text-lime-700">Home & living</a></li><li><a href="#" class="hover:text-lime-700">Beauty</a></li></ul></div>
+      <div><p class="font-semibold text-slate-950 mb-3">Help</p><ul class="space-y-2 text-slate-500"><li><a href="#" class="hover:text-lime-700">Shipping</a></li><li><a href="#" class="hover:text-lime-700">Returns</a></li><li><a href="#" class="hover:text-lime-700">Privacy</a></li><li><a href="#" class="hover:text-lime-700">Terms</a></li><li><a href="#" class="hover:text-lime-700">Contact</a></li></ul></div>
+      <div><p class="font-semibold text-slate-950 mb-3">Account</p><ul class="space-y-2 text-slate-500"><li><a href="login.html" id="footerSignin" class="hover:text-lime-700">Sign in</a></li><li><a href="register.html" class="hover:text-lime-700">Create account</a></li><li><a href="#" class="hover:text-lime-700">Track order</a></li></ul></div>
+    </div>
+    <div class="border-t border-slate-100 mt-8 py-5 text-xs text-slate-500 text-center">© 2026 Marketly · Good finds, simply.</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status"></div>
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden"><div id="cartBackdrop" class="absolute inset-0 bg-slate-950/50"></div><aside class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl p-6 flex flex-col"><div class="flex justify-between items-center"><div><p class="eyebrow">YOUR BAG</p><h2 class="text-2xl font-extrabold mt-1">Shopping cart</h2></div><button id="closeCart" class="rounded-full bg-slate-100 w-10 h-10 text-xl" aria-label="Close cart">×</button></div><div id="cartItems" class="flex-1 overflow-y-auto py-5 space-y-4"></div><div class="border-t border-slate-200 pt-5"><div class="flex justify-between font-bold text-lg"><span>Subtotal</span><span id="cartSubtotal">₦0</span></div><p class="text-xs text-slate-500 mt-2">Demo checkout — no payment will be collected.</p><button id="checkoutButton" class="w-full bg-slate-950 hover:bg-lime-700 text-white font-bold rounded-full py-3.5 mt-4">Continue to checkout</button></div></aside></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/preline@5.0.0/dist/preline.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

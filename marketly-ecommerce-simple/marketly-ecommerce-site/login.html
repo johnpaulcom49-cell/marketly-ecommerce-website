@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in — Marketly</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-bg min-h-screen">
+  <div class="auth-split min-h-screen">
+    <div class="auth-hero bg-lime-700">
+      <div class="auth-hero-inner">
+        <a href="index.html" class="brand-mark text-2xl font-extrabold text-white">marketly<span>.</span></a>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-8 leading-tight">Welcome back.</h2>
+        <p class="text-white/80 mt-3 text-sm max-w-sm">Sign in to pick up where you left off — your saved items, your list, and your good finds.</p>
+      </div>
+    </div>
+    <div class="auth-form-side">
+      <div class="auth-card">
+        <a href="index.html" class="auth-logo-mark">m.</a>
+        <p class="eyebrow mt-5">SIGN IN</p>
+        <h1 class="text-2xl font-extrabold mt-1 tracking-tight">Sign in.</h1>
+        <p class="text-slate-500 mt-1 text-sm">Access your saved cart and checkout faster.</p>
+        <div id="authMessage" class="hidden mt-4 rounded-xl p-3 text-sm"></div>
+        <form id="loginForm" class="space-y-5 mt-5">
+          <div>
+            <label for="loginEmail" class="form-label">Email address</label>
+            <input id="loginEmail" type="email" required autocomplete="email" placeholder="you@example.com" class="form-field w-full mt-2">
+          </div>
+          <div>
+            <div class="flex justify-between items-center">
+              <label for="loginPassword" class="form-label">Password</label>
+              <button type="button" id="forgotPassword" class="text-xs text-lime-700 font-bold">Forgot password?</button>
+            </div>
+            <div class="relative mt-2">
+              <input id="loginPassword" type="password" required autocomplete="current-password" placeholder="Enter your password" class="form-field w-full pr-14">
+              <button type="button" data-hs-toggle-password='{"target":"#loginPassword"}' class="absolute inset-y-0 right-0 flex items-center z-20 px-3 text-slate-400 hover:text-slate-700">
+                <svg class="toggle-eye-off w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                <svg class="toggle-eye-on w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+          <label class="flex items-center gap-2 text-sm text-slate-600">
+            <input type="checkbox" id="rememberMe" class="rounded border-slate-300 text-lime-700 focus:ring-lime-600">
+            <span>Remember me</span>
+          </label>
+          <button type="submit" class="w-full auth-submit text-white rounded-full py-3.5 font-bold transition">Sign in <span class="ml-1">→</span></button>
+        </form>
+        <p class="text-sm text-center text-slate-500 mt-6">New to Marketly? <a href="register.html" class="text-lime-700 font-bold">Create an account</a></p>
+        <p class="text-xs text-slate-400 text-center mt-4">Demo store — accounts persist only in this browser.</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/preline@5.0.0/dist/preline.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
